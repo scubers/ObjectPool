@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.author = { 'author' => 'Jrwong' }
     s.ios.deployment_target = '8.0'
 
-    s.source = { :path => '.', :tag => s.version }
+    s.source = { :git => 'https://github.com/scubers/ObjectPool.git', :tag => s.version }
 
 
     s.source_files = 'Classes/**/*.{h,m}'
