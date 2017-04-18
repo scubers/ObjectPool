@@ -68,7 +68,7 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
 
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(i * 0.2 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
-            PoolManagedObjectWrapper *wrapper = [_pool getObj];
+            PoolManagedObjectWrapper *wrapper = [_pool getManagedObj];
             NSLog(@"%@", wrapper.wrappedObj);
             sleep(1);
             [wrapper releaseToPool];
