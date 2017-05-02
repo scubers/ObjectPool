@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     # 基本信息
     s.name = 'ObjectPool' 
-    s.version="1.0.3"
+    s.version="1.0.4"
     s.summary = 'summary'
     s.homepage = 'http://www.jrwong.com'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
