@@ -13,7 +13,7 @@
 /**
  管理对象池，可以从这里获取对象，获取的对象，确保在一个线程中使用
  */
-@interface AbstractObjectPool<T> : NSObject {
+@interface AbstractObjectPool<T : id<PoolManagedObjectWrappable>> : NSObject {
     
 }
 
@@ -30,7 +30,7 @@
 
  @return return value description
  */
-- (PoolManagedObjectWrapper<T<PoolManagedObjectWrappable>> *)getManagedObj;
+- (PoolManagedObjectWrapper<T> *)getManagedObj;
 
 
 /**
@@ -38,7 +38,7 @@
 
  @param obj obj description
  */
-- (void)releaseManagedObjBackToPool:(PoolManagedObjectWrapper<T<PoolManagedObjectWrappable>> *)obj;
+- (void)releaseManagedObjBackToPool:(PoolManagedObjectWrapper<T> *)obj;
 
 
 
@@ -57,7 +57,7 @@
 
  @return return value description
  */
-- (T<PoolManagedObjectWrappable>)createWrappable;
+- (T)createWrappable;
 
 
 

@@ -10,9 +10,9 @@
 #import "SomePool.h"
 #import <pthread.h>
 
-@interface ObjectPoolTests : XCTestCase
+@interface ObjectPoolTests : XCTestCase <PoolManagedObjectWrappable>
 
-@property (nonatomic, strong) SomePool *pool;
+@property (nonatomic, strong) SomePool<ObjectPoolTests *> *pool;
 @property (nonatomic, strong) NSOperationQueue *queue;
 @property (nonatomic, strong) NSOperation *operation;
 
@@ -24,6 +24,10 @@
 @end
 
 @implementation ObjectPoolTests
+
+- (void)pmo_destroy {
+
+}
 
 - (void)setUp {
     [super setUp];
@@ -46,7 +50,7 @@
 - (void)testExample {
     for (int i = 0; i < 63; i++) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            PoolManagedObjectWrapper *wrapper = [_pool getObj];
+            PoolManagedObjectWrapper *wrapper = [_pool getManagedObj];
             NSLog(@"%@", wrapper.wrappedObj);
             sleep(1);
             [wrapper releaseToPool];

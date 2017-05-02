@@ -8,7 +8,7 @@
 
 #import "SomePool.h"
 
-@interface Abc : NSObject
+@interface Abc : NSObject <PoolManagedObjectWrappable>
 
 @end
 
@@ -18,6 +18,10 @@ static int a = 0;
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%d", a++];
+}
+
+- (void)pmo_destroy {
+
 }
 
 @end
@@ -33,7 +37,8 @@ static int a = 0;
     return self;
 }
 
-- (id)createObj {
+
+- (id<PoolManagedObjectWrappable>)createWrappable {
     return [Abc new];
 }
 

@@ -8,6 +8,6 @@
 
 #import "AbstractObjectPool.h"
 
-@interface SomePool : AbstractObjectPool
+@interface SomePool<T> : AbstractObjectPool
 
 @end

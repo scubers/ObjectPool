@@ -21,7 +21,7 @@
 
 //////////////////////////////////////////////////////////////////////
 
-@interface PoolManagedObjectWrapper<Wrappable> : NSObject
+@interface PoolManagedObjectWrapper<Wrappable: id<PoolManagedObjectWrappable>> : NSObject
 
 
 /**
@@ -30,10 +30,10 @@
  @param obj obj description
  @return return value description
  */
-+ (instancetype)wrapObj:(Wrappable<PoolManagedObjectWrappable>)obj;
++ (instancetype)wrapObj:(Wrappable)obj;
 
 
-@property (nonatomic, strong, readonly) Wrappable<PoolManagedObjectWrappable> wrappedObj;
+@property (nonatomic, strong, readonly) Wrappable wrappedObj;
 
 
 @property (nonatomic, assign) NSUInteger version;

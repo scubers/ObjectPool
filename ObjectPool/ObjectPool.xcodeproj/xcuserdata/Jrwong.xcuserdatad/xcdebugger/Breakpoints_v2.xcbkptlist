@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833633.725235"
+            timestampString = "515386402.585544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-testsommm"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833633.725235"
+            timestampString = "515386402.585544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-testDispatch_suspend"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ObjectPoolTests testDispatch_suspend]_block_invoke"
+                  moduleName = "ObjectPoolTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
+                  timestampString = "515386458.945509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ObjectPoolTests testDispatch_suspend]_block_invoke_2"
+                  moduleName = "ObjectPoolTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
+                  timestampString = "515386458.949321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ObjectPoolTests/ObjectPoolTests.m"
+            timestampString = "515386402.585544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-testDispatch_suspend"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833633.725235"
+            timestampString = "515386402.585544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-testDispatch_suspend"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833633.725235"
+            timestampString = "515386402.585544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-testDispatch_suspend"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,45 +138,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833633.725235"
+            timestampString = "515386402.585544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-testDispatch_suspend"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513829837.598628"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-testExample"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ObjectPoolTests/ObjectPoolTests.m"
-            timestampString = "513833660.529432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "-testOperation"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ObjectPoolTests testOperation]"
+                  moduleName = "ObjectPoolTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
+                  timestampString = "515386458.964259"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "71">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[ObjectPoolTests testOperation]_block_invoke"
+                  moduleName = "ObjectPoolTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
+                  timestampString = "515386458.967229"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
