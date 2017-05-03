@@ -99,7 +99,9 @@
 }
 
 - (void)refreshPool {
-    _version++;
+    dispatch_async(_operationQueue, ^{
+        _version++;
+    });
 }
 
 #pragma mark private
@@ -145,7 +147,7 @@
 #pragma mark needs override
 
 - (id<PoolManagedObjectWrappable>)createWrappable {
-    NSAssert(NO, @"请在子类实现此方法：%s", __FUNCTION__);
+    NSAssert(NO, @"请在本类[%@]实现此方法：[%s]", NSStringFromClass(self.class), __FUNCTION__);
     return nil;
 }
 
