@@ -9,6 +9,7 @@
 #import "AbstractObjectPool.h"
 #import "PoolManagedObjectWrapper.h"
 #include <pthread.h>
+#import <objc/runtime.h>
 
 @interface AbstractObjectPool ()
 
@@ -20,6 +21,8 @@
 
 /// 操作队列
 @property (nonatomic) dispatch_queue_t operationQueue;
+/// 操作等待数的队列
+@property (nonatomic) dispatch_queue_t waitingCountQueue;
 
 /// 信号量
 @property (nonatomic) dispatch_semaphore_t signal;
@@ -48,9 +51,14 @@
         _freePool = [NSMutableSet setWithCapacity:1];
         _servicePool = [NSMutableSet setWithCapacity:1];
 
+
         _maxPoolCount = 1;
 
-        _operationQueue = dispatch_queue_create("com.jrwong.pool.operation.queue", DISPATCH_QUEUE_SERIAL);
+
+
+        _operationQueue = dispatch_queue_create([NSString stringWithFormat:@"com.jrwong.pool.operation.queue.%p", self].UTF8String, DISPATCH_QUEUE_SERIAL);
+
+        _waitingCountQueue = dispatch_queue_create([NSString stringWithFormat:@"com.jrwong.pool.waitingCount.queue.%p", self].UTF8String, DISPATCH_QUEUE_SERIAL);
 
         [self _checkIfNeedChangeManagedObjCount];
     }
@@ -64,8 +72,13 @@
 #pragma mark public
 
 - (PoolManagedObjectWrapper *)getManagedObj {
+    // 增加等待数
+    [self increaseWaitingCount];
     // 使用forever 永远返回0
     dispatch_semaphore_wait(_signal, DISPATCH_TIME_FOREVER);
+    // 减去等待数
+    [self decreaseWaitingCount];
+
     __block PoolManagedObjectWrapper *obj;
     dispatch_sync(_operationQueue, ^{
         obj = _freePool.anyObject;
@@ -144,6 +157,20 @@
     return wrapper;
 }
 
+- (void)increaseWaitingCount {
+    dispatch_sync(_waitingCountQueue, ^{
+        self.waitingCount++;
+        NSLog(@"waiting count increase to %zd", _waitingCount);
+    });
+}
+
+- (void)decreaseWaitingCount {
+    dispatch_sync(_waitingCountQueue, ^{
+        self.waitingCount--;
+        NSLog(@"waiting count decrease to %zd", _waitingCount);
+    });
+}
+
 #pragma mark needs override
 
 - (id<PoolManagedObjectWrappable>)createWrappable {
@@ -158,6 +185,10 @@
     NSAssert(maxPoolCount > 0, @"至少需要保持一个对象");
     _delta = MAX(0, _maxPoolCount - maxPoolCount);
     _maxPoolCount = maxPoolCount;
+}
+
+- (void)setWaitingCount:(NSUInteger)waitingCount {
+    _waitingCount = waitingCount;
 }
 
 

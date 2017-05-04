@@ -64,6 +64,9 @@
 //        });
 //    }
 
+    [_pool addObserver:self forKeyPath:@"waitingCount" options:NSKeyValueObservingOptionNew context:nil];
+
+    _pool.maxPoolCount = 5;
     for (int i = 0; i < 1000; i++) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
 
@@ -75,7 +78,7 @@
         });
     }
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _pool.maxPoolCount = 20;
     });
 
@@ -127,6 +130,10 @@
 //    NSLog(@"%@", [self testReturn]);
 //
     return YES;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"====%@", change);
 }
 
 - (id)testReturn {

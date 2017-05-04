@@ -24,6 +24,8 @@
 
 @property (nonatomic, assign, readonly) NSUInteger totalPopTimes;///< 总使用数
 
+@property (nonatomic, assign, readonly) NSUInteger waitingCount;///< 总等待数
+
 
 /**
  从池子获取可用对象, 没有则等待

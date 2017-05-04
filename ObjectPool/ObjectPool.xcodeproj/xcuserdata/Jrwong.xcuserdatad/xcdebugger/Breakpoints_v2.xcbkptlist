@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObjectPool/AppDelegate.m"
-            timestampString = "513846600.495956"
+            timestampString = "515584782.725084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "-testReturn"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,38 +49,6 @@
             endingLineNumber = "89"
             landmarkName = "-testDispatch_suspend"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[ObjectPoolTests testDispatch_suspend]_block_invoke"
-                  moduleName = "ObjectPoolTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
-                  timestampString = "515386458.945509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "61">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[ObjectPoolTests testDispatch_suspend]_block_invoke_2"
-                  moduleName = "ObjectPoolTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
-                  timestampString = "515386458.949321"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,38 +113,6 @@
             endingLineNumber = "74"
             landmarkName = "-testOperation"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ObjectPoolTests testOperation]"
-                  moduleName = "ObjectPoolTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
-                  timestampString = "515386458.964259"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "71">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[ObjectPoolTests testOperation]_block_invoke"
-                  moduleName = "ObjectPoolTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Jrwong/Documents/code/ObjectPool/ObjectPool/ObjectPoolTests/ObjectPoolTests.m"
-                  timestampString = "515386458.967229"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
