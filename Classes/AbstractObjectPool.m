@@ -160,14 +160,14 @@
 - (void)increaseWaitingCount {
     dispatch_sync(_waitingCountQueue, ^{
         self.waitingCount++;
-        NSLog(@"waiting count increase to %zd", _waitingCount);
+//        NSLog(@"waiting count increase to %zd", _waitingCount);
     });
 }
 
 - (void)decreaseWaitingCount {
     dispatch_sync(_waitingCountQueue, ^{
         self.waitingCount--;
-        NSLog(@"waiting count decrease to %zd", _waitingCount);
+//        NSLog(@"waiting count decrease to %zd", _waitingCount);
     });
 }
 
