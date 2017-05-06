@@ -11,6 +11,19 @@
 
 
 /**
+ 池子对象生成器
+ */
+@protocol PoolManagedObjectWrappableCreator <NSObject>
+
+- (id<PoolManagedObjectWrappable>)pmo_createWrappable;
+
+@end
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+/**
  管理对象池，可以从这里获取对象，获取的对象，确保在一个线程中使用
  */
 @interface AbstractObjectPool<T : id<PoolManagedObjectWrappable>> : NSObject {
@@ -25,6 +38,21 @@
 @property (nonatomic, assign, readonly) NSUInteger totalPopTimes;///< 总使用数
 
 @property (nonatomic, assign, readonly) NSUInteger waitingCount;///< 总等待数
+
+@property (nonatomic, strong, readonly) id<PoolManagedObjectWrappableCreator> creator;///< 创建器
+
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+
+/**
+ 使用一个生成器创建池子
+
+ @param creator creator description
+ @return return value description
+ */
+- (instancetype)initWithCreator:(id<PoolManagedObjectWrappableCreator>)creator;
 
 
 /**
@@ -50,16 +78,6 @@
  释放会调用 @see [PoolManagedObjectWrappable pmo_destroy] 方法
  */
 - (void)refreshPool;
-
-
-#pragma mark 子类重写
-
-/**
- 子类重写，在池子没有对象或者没达到最大数目时，创建对象使用
-
- @return return value description
- */
-- (T)createWrappable;
 
 
 

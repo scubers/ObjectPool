@@ -10,4 +10,5 @@
 
 @interface SomePool<T> : AbstractObjectPool
 
+
 @end

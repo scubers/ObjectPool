@@ -41,10 +41,12 @@
 
 #pragma mark life
 
-- (instancetype)init {
+- (instancetype)initWithCreator:(id<PoolManagedObjectWrappableCreator>)creator {
     NSAssert(self.class != [AbstractObjectPool class], @"【%@】抽象类不能创建, 请继承实现对应方法", NSStringFromClass(self.class));
     self = [super init];
     if (self) {
+
+        _creator = creator;
 
         _signal = dispatch_semaphore_create(0);
 
@@ -151,7 +153,7 @@
 }
 
 - (PoolManagedObjectWrapper *)_getNewPoolManagedObjectWrapper {
-    PoolManagedObjectWrapper *wrapper = [PoolManagedObjectWrapper wrapObj:[self createWrappable]];
+    PoolManagedObjectWrapper *wrapper = [PoolManagedObjectWrapper wrapObj:[self.creator pmo_createWrappable]];
     wrapper.parentPool = self;
     wrapper.version = self.version;
     return wrapper;
@@ -172,11 +174,6 @@
 }
 
 #pragma mark needs override
-
-- (id<PoolManagedObjectWrappable>)createWrappable {
-    NSAssert(NO, @"请在本类[%@]实现此方法：[%s]", NSStringFromClass(self.class), __FUNCTION__);
-    return nil;
-}
 
 
 #pragma mark getter setter

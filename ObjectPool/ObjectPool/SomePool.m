@@ -8,38 +8,11 @@
 
 #import "SomePool.h"
 
-@interface Abc : NSObject <PoolManagedObjectWrappable>
-
-@end
-
-static int a = 0;
-
-@implementation Abc
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%d", a++];
-}
-
-- (void)pmo_destroy {
-
-}
+@interface SomePool ()
 
 @end
 
 @implementation SomePool
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.maxPoolCount = 5;
-    }
-    return self;
-}
-
-
-- (id<PoolManagedObjectWrappable>)createWrappable {
-    return [Abc new];
-}
 
 @end

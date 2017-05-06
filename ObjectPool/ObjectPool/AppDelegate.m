@@ -10,7 +10,27 @@
 #import "SomePool.h"
 
 
-@interface AppDelegate ()
+@interface Abc : NSObject <PoolManagedObjectWrappable>
+
+@end
+
+static int a = 0;
+
+@implementation Abc
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%d", a++];
+}
+
+- (void)pmo_destroy {
+
+}
+
+@end
+
+
+
+@interface AppDelegate () <PoolManagedObjectWrappableCreator>
 @property (nonatomic, strong) SomePool *pool;
 @property (nonatomic, strong) NSOperationQueue *queue;
 @property (nonatomic, strong) NSOperation *operation;
@@ -26,7 +46,7 @@
     _queue = [[NSOperationQueue alloc] init];
     _queue.maxConcurrentOperationCount = 1;
 
-    _pool = [SomePool new];
+    _pool = [[SomePool alloc] initWithCreator:self];
 
 //    NSMutableArray *ori = @[@0,@1,@2,@3,@4].mutableCopy;
 //    NSMutableArray *using = @[].mutableCopy;
@@ -145,6 +165,10 @@
 //    [_queue addOperation:_operation];
     [_operation waitUntilFinished];
     return abc;
+}
+
+- (id<PoolManagedObjectWrappable>)pmo_createWrappable {
+    return [Abc new];
 }
 
 @end
