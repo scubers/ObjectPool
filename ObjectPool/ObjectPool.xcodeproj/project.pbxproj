@@ -54,6 +54,7 @@
 		A838C3131E9E0C1500351C8E /* PoolManagedObjectWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoolManagedObjectWrapper.m; sourceTree = "<group>"; };
 		A838C3151E9E1E2A00351C8E /* SomePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomePool.h; sourceTree = "<group>"; };
 		A838C3161E9E1E2A00351C8E /* SomePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomePool.m; sourceTree = "<group>"; };
+		A841A6AB1F30748E00CB4009 /* ObjectPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 		098BA29F1E0D12510068F7F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A841A6AB1F30748E00CB4009 /* ObjectPool.h */,
 				A838C3121E9E0C1500351C8E /* PoolManagedObjectWrapper.h */,
 				A838C3131E9E0C1500351C8E /* PoolManagedObjectWrapper.m */,
 				A838C30B1E9DFF9600351C8E /* AbstractObjectPool.h */,
