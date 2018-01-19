@@ -62,8 +62,8 @@
 
  @return return value description
  */
-- (OPPoolObjectWrapper<T> *)getObject;
-- (OPPoolObjectWrapper<T> *)getManagedObj OP_DEPRECATED("use -[OPAbstractPool getObject]");
+- (OPPoolObjectWrapper<T> *)getObjectWrapper;
+- (OPPoolObjectWrapper<T> *)getManagedObj OP_DEPRECATED("use -[OPAbstractPool getObjectWrapper]");
 
 
 /**

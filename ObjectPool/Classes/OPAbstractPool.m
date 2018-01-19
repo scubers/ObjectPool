@@ -88,7 +88,7 @@
 
 #pragma mark public
 
-- (OPPoolObjectWrapper *)getObject {
+- (OPPoolObjectWrapper *)getObjectWrapper {
     [self freeze];
     // 增加等待数
     [self increaseWaitingCount];
@@ -115,7 +115,7 @@
 }
 
 - (OPPoolObjectWrapper *)getManagedObj {
-    return [self getObject];
+    return [self getObjectWrapper];
 }
 
 
@@ -128,7 +128,6 @@
         } else {
             [_freePool addObject:obj];
             long ret = dispatch_semaphore_signal(_signal);
-            NSLog(@"-=-=-=-=-=- : %zd", ret);
             if (ret == 0) {
                 [self unfreeze];
             }
