@@ -1,20 +1,25 @@
+
+
 Pod::Spec.new do |s|
-    # 基本信息
-    s.name = 'ObjectPool' 
-    s.version="1.2.0"
-    s.summary = 'summary'
-    s.homepage = 'http://www.jrwong.com'
-    s.license = { :type => 'MIT', :file => 'LICENSE' }
-    s.author = { 'author' => 'Jrwong' }
+    s.name             = 'ObjectPool'
+    s.version          = '0.1.0'
+    s.summary          = 'A short description of ObjectPool.'
+
+    s.description      = <<-DESC
+    TODO: Add long description of the pod here.
+                        DESC
+
+    s.homepage         = 'https://github.com/scubers/ObjectPool'
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.author           = { 'scubers' => 'jr-wong@qq.com' }
+
+    s.source           = { :git => 'https://github.com/scubers/ObjectPool.git', :tag => s.version.to_s }
+
     s.ios.deployment_target = '8.0'
 
-    s.source = { :git => 'https://github.com/scubers/ObjectPool.git', :tag => s.version }
+
+    s.source_files = "#{s.name}/Classes/**/*.{h,m}"
+    s.public_header_files = "#{s.name}/Classes/**/*.h"
 
 
-    s.source_files = 'Classes/**/*.{h,m}'
-    s.public_header_files = 'Classes/**/*.{h}'
-    
-    # s.dependency 'MJExtension', :exclusive => true        # 类似这样添加自己的内部需要的pod, exclusive表示这个pod自己独有，如果大家都需要的pod，去LYCommon里面加入
-
-
- end
+end
